@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 10 version
+*/
+
 :root{
     --very-dark-magenta: hsl(300, 43%, 22%);
     --soft-pink: hsl(333, 80%, 67%);
@@ -22,8 +29,10 @@ body{
     background-image: url('images/bg-pattern-top-desktop.svg'), url('images/bg-pattern-bottom-desktop.svg');
     background-repeat: no-repeat;
     background-position: top left, bottom -5em right;
+    display: -ms-grid;
     display: grid;
-    align-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
 }
 
 #full-container{
@@ -33,7 +42,9 @@ body{
 }
 
 main{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -55,14 +66,19 @@ main{
 }
 
 #main-rating{
+    display: -ms-grid;
     display: grid;
     gap: 1.2em;
 }
 
 .rating-box{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 2fr;
     grid-template-columns: 1fr 2fr;
-    justify-content: start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
     background-color: var(--light-grayish-magenta);
     border-radius: var(--border-radius);
     color: var(--very-dark-magenta);
@@ -76,21 +92,29 @@ main{
 }
 
 .rate-one{
-    justify-self: start;
+    -ms-grid-column-align: start;
+        justify-self: start;
 }
 
 .rate-two{
-    justify-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
 }
 
 .rate-three{
-    justify-self: end;
+    -ms-grid-column-align: end;
+        justify-self: end;
 }
 
 #cards-section{
+    display: -ms-grid;
     display: grid;
-    justify-content: space-between;
-    align-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -ms-grid-columns: 1fr 1.5em 1fr 1.5em 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5em;
     margin: 0 auto;
@@ -99,19 +123,26 @@ main{
 
 .card-container{
     min-height: 20em;
+    display: -ms-grid;
     display: grid;
 }
 
 .card-container .one{
-    align-self: start;
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
 }
 
 .card-container .two{
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
 }
 
 .card-container .three{
-    align-self: end;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
 }
 
 .card-wrapper{
@@ -130,9 +161,13 @@ main{
 }
 
 .card-header{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1em 5fr;
     grid-template-columns: 1fr 5fr;
-    justify-content: start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
     gap: 1em;
 }
 
@@ -160,6 +195,7 @@ main{
     }
 
     main{
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     }
 
@@ -179,20 +215,24 @@ main{
     }
 
     .rating-box{
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
         width: 100%;
         text-align: center;
     }
 
     .rate-one{
-        justify-self: center;
+        -ms-grid-column-align: center;
+            justify-self: center;
     }
     
     .rate-three{
-        justify-self: center;
+        -ms-grid-column-align: center;
+            justify-self: center;
     }
 
     #cards-section{
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
         gap: 0em;
         margin-top: 4em;
@@ -204,10 +244,14 @@ main{
     }
 
     .card-container .two{
-        align-self: start;
+        -ms-flex-item-align: start;
+            -ms-grid-row-align: start;
+            align-self: start;
     }
     
     .card-container .three{
-        align-self: start;
+        -ms-flex-item-align: start;
+            -ms-grid-row-align: start;
+            align-self: start;
     }
 }
